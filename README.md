@@ -89,14 +89,14 @@ That will get you in the container shell and you can run the app manually to see
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/spaceshiptrip/TechInterview-Backend?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/spaceshiptrip/DevSeries-Frontend-JS?style=for-the-badge
 [contributors-url]: https://github.com/spaceshiptrip/TechInterview-Backend/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/spaceshiptrip/TechInterview-Backend?style=social?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/spaceshiptrip/DevSeries-Frontend-JS?style=for-the-badge
 [forks-url]: https://github.com/spaceshiptrip/TechInterview-Backend/network/members
-[issues-shield]: https://img.shields.io/github/issues/spaceshiptrip/TechInterview-Backend?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/spaceshiptrip/DevSeries-Frontend-JS?style=for-the-badge
 [issues-url]: https://github.com/spaceshiptrip/TechInterview-Backend/issues
-[license-shield]: https://img.shields.io/github/license/spaceshiptrip/TechInterview-Backend?style=for-the-badge
-[license-url]: https://github.com/spaceshiptrip/TechInterview-Backend/blob/main/LICENSE
+[license-shield]: https://img.shields.io/github/license/spaceshiptrip/DevSeries-Frontend-JS?style=for-the-badge
+[license-url]: https://github.com/spaceshiptrip/DevSeries-Frontend-JS/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jaytorres-robotics/
 [product-screenshot]: images/screenshot.png
