@@ -20,38 +20,86 @@ This is a simple html/javascript front end application that renders a message fr
 
 It is meant to run in parallel with the [Simple Backend Flask Application](https://github.com/spaceshiptrip/TechInterview-Backend)
 
-## Install
-If you do not want to run with Docker, skip this step
 
-1. Build Dockerfile:
+## Installation
+
+### Prerequisite for Simple HTML / JavaScript Client
+* To do development through Docker only:
+  * [Docker](https://docs.docker.com/get-docker/)
+* To do development outside of Docker containers:
+  * nodejs: [binaries](https://nodejs.org/en/download/), [package managers](https://nodejs.org/en/download/package-manager/)
+
+### Downloading this code from this repo
+1. Create a directory to save the code:
    ```
-   docker build -t fe:dev .
+   mkdir Workspace
+   cd Workspace
+   ```
+2. Download this repo:
+   ```
+   git clone https://github.com/spaceshiptrip/DevSeries-Frontend-JS.git
    ```
 
-## Execution
-Dockerized version:
-1. Run Dockerfile:
+
+## Build and Execute
+* Change to the project directory
+  ```
+  cd DevSeries-Backend-Flask
+  ```
+
+### Building and Running with Docker
+**Note: This is not necessary if you are not using Docker.**
+
+* Build the docker container:
+  ```
+  docker build -t fe:dev .
+  ```
+
+* Run the app through the container:
+  ```
+  docker run -it --rm -v $(PWD):/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true --name fe --rm fe:dev
+  ```
+
+### Non Dockerized Version
+* Pre-requisites: 
+  * nodejs
+  
+1. Install the app dependencies:
    ```
-   docker run -it --rm -v $(PWD):/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true --name fe --rm fejs:dev
+   yarn
    ```
 
-Non Dockerized version:
-1. Start the app:
+2. Start the server:
    ```
-   npm start
+   node index.js
    ```
-## Usage
-1. Open browser to `http://localhost:3001`
+   
+3. Open browser to `http://localhost:3001`
 
+
+## Stopping Server
+* Dockerized version
+  * Open a terminal prompt
+  * If you used the run command listed above:
+    ```
+    docker stop fe
+    ```
+  * Replace `be` if you chose another name which can be found for port `3000`:
+    ```
+    docker ps
+    ```
+* Non Dockerized version
+  * In the terminal running the server, press \<CTRL\>-c
+  
 
 ## More Info
-#### Docker
+### Docker
 The Docker run command:
 ```
-docker run -it --rm -v $(PWD):/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true --name fe --rm fejs:dev
+docker run -it --rm -v $(PWD):/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true --name fe --rm fejs:dev
 ```
-* -p 3001:3000
-   * This redirects 3001 from your browser or external application to the container's port 3000 because the application is listening on port 3000
+* -p 3000:3000
+   * This redirects 3000 from your browser or external application to the container's port 3000 because the application is listening on port 3000
 * --name fe
    * This is the simple name for the container, you can stop it with:
    ```
@@ -63,7 +111,7 @@ docker run -it --rm -v $(PWD):/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR
    * During development this allows you to hotswap code without having to rebuild/restart the docker container
 
 
-#### Server code
+### Server code
 This is the front end doing a simple HTTP request to a `localhost` backend server.  It expects a JSON object with the following structure:
 ```
 {
@@ -75,14 +123,14 @@ This is the front end doing a simple HTTP request to a `localhost` backend serve
 The client will update the webpage with the message found in JSON.
 
 
-h1. DEBUG
+## DEBUG
 ```
-docker run -it --rm  --entrypoint sh simple
+docker run -it --rm  --entrypoint sh fe:dev
 ```
 
 That will get you in the container shell and you can run the app manually to see the error message:
 ```
-# docker run simple
+# docker run fe:dev
 ```
 
 
