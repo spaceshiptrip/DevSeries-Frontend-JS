@@ -96,7 +96,7 @@ It is meant to run in parallel with the [Simple Backend Flask Application](https
 ### Docker
 The Docker run command:
 ```
-docker run -it --rm -v $(PWD):/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true --name fe --rm fejs:dev
+docker run -it --rm -v $(PWD):/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true --name fe --rm fe:dev
 ```
 * -p 3000:3000
    * This redirects 3000 from your browser or external application to the container's port 3000 because the application is listening on port 3000
@@ -105,7 +105,7 @@ docker run -it --rm -v $(PWD):/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR
    ```
    docker stop fe
    ```
-* --rm fejs:dev
+* --rm fe:dev
    * This is the name of the container you built from the first command
 * -e CHOKIDAR_USEPOLLING=true
    * During development this allows you to hotswap code without having to rebuild/restart the docker container
