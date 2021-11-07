@@ -44,7 +44,7 @@ It is meant to run in parallel with the [Simple Backend Flask Application](https
 ## Build and Execute
 * Change to the project directory
   ```
-  cd DevSeries-Backend-Flask
+  cd DevSeries-Frontend-JS
   ```
 
 ### Building and Running with Docker
