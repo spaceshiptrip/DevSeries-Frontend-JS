@@ -59,6 +59,9 @@ It is meant to run in parallel with the [Simple Backend Flask Application](https
   ```
   docker run -it --rm -v $(PWD):/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true --name fe --rm fe:dev
   ```
+* Browser Access:
+   * If you are running on your local computer, open browser to `http://localhost:3001`
+   * If you are not running on your local computer, open browser to `http://<server public ip>:3001`
 
 ### Non Dockerized Version
 * Pre-requisites: 
@@ -74,7 +77,10 @@ It is meant to run in parallel with the [Simple Backend Flask Application](https
    node index.js
    ```
    
-3. Open browser to `http://localhost:3001`
+3. Browser Access:
+   * If you are running on your local computer, open browser to `http://localhost:3001`
+   * If you are not running on your local computer, open browser to `http://<server public ip>:3001`
+   
 
 
 ## Stopping Server
